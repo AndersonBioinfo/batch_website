@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Batch Coverage Report Generator</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🧬 Batch Coverage Report Generator</h1>
+    <p style="color: #666; margin-top: -10px;">Upload 100 Excel files and generate all reports at once</p>
+
+    <div class="card">
+      <label for="excelUpload">📊 Upload Multiple Excel Files (.xlsx / .xls)</label><br />
+      <input 
+        type="file" 
+        id="excelUpload" 
+        accept=".xlsx,.xls" 
+        multiple
+        style="margin-top: 8px;"
+      />
+      <p style="font-size: 12px; color: #666; margin-top: 5px;">
+        💡 Tip: Select all 100 files at once (Ctrl+A or Cmd+A)
+      </p>
+    </div>
+
+    <div class="card">
+      <div id="progress" style="display: none; padding: 10px; background: #f0f0f0; border-radius: 4px; margin-bottom: 10px;">
+        Ready to process...
+      </div>
+      <button id="downloadAllHtml">⬇️ Download All HTML Reports (as ZIP)</button>
+    </div>
+
+    <div class="info">
+      <strong>📌 Requirements:</strong><br />
+      • Each Excel file = 1 patient/sample<br />
+      • File name will be used as patient name<br />
+      • Excel columns: <b>Gene_Name</b> and <b>%_1x</b><br />
+      • All reports will be downloaded as a single ZIP file<br />
+      <br />
+      <strong>📝 Example:</strong><br />
+      • Upload: patient1.xlsx, patient2.xlsx, ..., patient100.xlsx<br />
+      • Get: gene_coverage_reports.zip containing 100 HTML files
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
