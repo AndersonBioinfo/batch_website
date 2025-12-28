@@ -294,7 +294,7 @@ function buildTableRows(samples) {
     const sno = idx + 1;
     const gene = row['Gene_Name'] || row['Gene'] || row['gene'] || '';
 
-    let pct1x = row['%_1x'] || row['Coverage'] || row['Percentage'];
+    let pct1x = row['% 1x '] || row['Coverage'] || row['Percentage'];
 
     if (pct1x === 0 || pct1x === '0' || pct1x === 0.0) {
       pct1x = '0';
