@@ -137,9 +137,7 @@ const PAGE_TEMPLATE = `
     </div>
   </div>
 
-  <div class="patient-header">
-    <h3>Patient: {{PATIENT_NAME}}</h3>
-  </div>
+
 
   <div class="container">
     <div class="controls">
